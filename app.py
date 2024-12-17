@@ -12,8 +12,7 @@ import openai
 from openai import OpenAI
 
 # Set OpenAI API key (use environment variable for security)
-openai.api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # Load models from Hugging Face Hub
 @st.cache_resource
 def load_sentence_transformer_model():
