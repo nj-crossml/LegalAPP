@@ -12,7 +12,8 @@ import openai
 from openai import OpenAI
 
 # Set OpenAI API key (use environment variable for security)
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI()
 # Load models from Hugging Face Hub
 @st.cache_resource
 def load_sentence_transformer_model():
@@ -121,7 +122,7 @@ def compute_similarity_with_bert(text1, text2):
 
     embeddings1 = [sent_embedding(sent) for sent in sentences1]
     embeddings2 = [sent_embedding(sent) for sent in sentences2]
-
+api_key
     matched_sentences2 = set()
     similar_sentences = []
     different_sentences = []
