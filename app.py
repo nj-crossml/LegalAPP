@@ -122,7 +122,6 @@ def compute_similarity_with_bert(text1, text2):
 
     embeddings1 = [sent_embedding(sent) for sent in sentences1]
     embeddings2 = [sent_embedding(sent) for sent in sentences2]
-api_key
     matched_sentences2 = set()
     similar_sentences = []
     different_sentences = []
